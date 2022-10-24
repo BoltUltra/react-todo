@@ -9,7 +9,7 @@ const Plan = () => {
     setInput("");
   };
   return (
-    <div className="glass p-10 rounded-lg space-y-5">
+    <div className="glass p-10 rounded-lg space-y-5 w-full md:mx-10 mx-2">
       <h1 className="text-center text-white md:text-5xl uppercase font-bold">
         MY TODO LIST
       </h1>
@@ -18,7 +18,7 @@ const Plan = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="bg-transparent px-5 focus:outline-none"
+          className="bg-transparent px-5 focus:outline-none w-full"
         />
         <button
           type="submit"
@@ -27,7 +27,8 @@ const Plan = () => {
           onClick={addTodo}
           className="gradient py-2 text-white px-10 rounded-full"
         >
-          Add Todo
+          <span className="md:block hidden">Add Todo</span>{" "}
+          <span className="md:hidden">Add</span>
         </button>
       </form>
       {todos.map((todo) => (
